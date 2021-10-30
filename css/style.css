@@ -1,0 +1,261 @@
+body{
+    margin: 0;
+    padding: 0;
+    font: 16px Gilroy, Arial, sans-serif;
+}
+
+.container{
+    display: grid;
+    width: 1600px;
+    margin: 0 auto;
+    grid-template-areas:
+        ". header-nav ."
+        ". header-about ."
+        ". our-mission ."
+        "calculate calculate ."
+        ". about-us ."
+        "discount discount discount"
+        ". blog ."
+        ". review ."
+        ". footer .";
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: 110px 590px 594px 822px 785px 565px 564px 946px 593px;
+    grid-gap: 5px;
+}
+
+.container > div, header{
+    color: black;
+    border: 2px solid black;
+}
+
+.header-nav{
+    grid-area: header-nav;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none !important;
+}
+
+.header-menu{
+    margin-left: 130px;
+}
+
+.header-menu a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-right: 35px;
+}
+
+.header-menu a:last-child{
+    margin-right: 0px;
+}
+
+.header-menu a:hover{
+    color: #2F81ED;
+}
+
+.header-contacts a{
+    margin-right: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #2F81ED;
+    font-size: 20px;
+}
+
+.header-contacts a:last-child{
+    margin-right: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+    background-color: #2F81ED;
+    padding: 12px 25px 11px;
+    border-radius: 12px;
+}
+
+.header-about{
+    grid-area: header-about;
+    display: flex;
+    justify-content: space-between;
+    border: none !important;
+}
+
+
+.about-preview p:first-child{
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 60px;
+    max-width: 486px;
+    margin-bottom: 22px;
+}
+
+.about-preview p:first-child span{
+    color: #2F81ED;
+}
+
+.about-preview p:nth-child(2){
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 284px;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.about-preview a{
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    background: linear-gradient(#2784FF, #1E67C7);
+    border-radius: 12px;
+    padding: 21px 33px;
+    display: inline-block;
+
+}
+
+.carousel-price{
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-slide{
+    width: 285px;
+    height: 590px;
+    background-image: url(../img/slide.png);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+
+.first-slide p{
+    font-style: normal;
+    color: white;
+    margin-left: 30px;
+
+}
+
+.first-slide p:first-child{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 36px;
+    margin-bottom: 10px;
+}
+
+.first-slide p:nth-child(2){
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 300;
+    margin-bottom: 0px;
+}
+.first-slide p:nth-child(3){
+    font-size: 24px;
+    line-height: 36px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.second-slide-control{
+    margin-left: 20px;
+}
+
+.second-slide{
+    width: 285px;
+    height: 498px;
+    border: 1px solid #ECECEC;
+    box-sizing: border-box;
+    border-radius: 12px;
+    position:relative;
+}
+
+.second-slide img{
+    margin: 30px;
+}
+
+.second-slide p {
+    position:absolute;
+    bottom: 0px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    color: black;
+    margin-left: 30px;
+}
+.control-carousel{
+    display: flex;
+    justify-content: space-between;
+}
+
+.arrows{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-left: 14px;
+}
+
+.control-carousel i {
+    border: solid #AAAFB7;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 5px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    margin-right: 10px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.circles{
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+    align-items: flex-end;
+}
+
+.circle{
+    width: 10px;
+    height: 10px;
+    background: #AAAFB7;
+    border-radius: 50%;
+}
+.active{
+    background-color: #2F81ED;
+}
+
+
+
+.our-mission{
+    grid-area: our-mission;
+}
+
+.calculate{
+    grid-area: calculate;
+}
+
+.about-us{
+    grid-area: about-us;
+}
+
+.discount{
+    grid-area: discount;
+}
+
+.blog{
+    grid-area: blog;
+}
+
+.review{
+    grid-area: review;
+}
+
+.footer{
+    grid-area: footer;
+}
