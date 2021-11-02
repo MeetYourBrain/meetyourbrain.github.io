@@ -6,7 +6,7 @@ body{
 
 .container{
     display: grid;
-    width: 1600px;
+    width: 100%;
     margin: 0 auto;
     grid-template-areas:
         ". header-nav ."
