@@ -5,28 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/Gilroy/stylesheet.css">
-    <title>NormaCleaning</title>
+    <title>Document</title>
 </head>
+
+<style>
+    .fixed-header {
+        position: fixed;
+        z-index: 5;
+        background-color: #fff;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+    }
+    
+    .fixed-header .header {
+        max-width: 1220px;
+        margin: auto;
+    }
+
+    .fixed-header--shadow{
+        box-shadow: 0 0 10px 1px rgb(0 0 0 / 20%);
+    }
+
+    .preview-slider {
+        margin-top: 110px;
+    }
+    @media (max-width: 1023px) {
+        .fixed-header .header {
+            max-width: 668px;
+            margin: auto;
+        }
+
+        .preview-slider {
+            margin-top: 150px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .fixed-header .header {
+            padding: 0 25px;
+            padding-bottom: 5px
+        }
+
+        .header::after {
+            bottom: 0
+        }
+    }
+</style>
 
 <body>
     <div class="wrapper">
-        <header class="header">
-            <div class="header__logo">
-                <a href="#">Norma<span>Cleaning</span></a>
-            </div>
-            <div class="header__contacts">
-                <a href="#" class="header__phone">+7 (812) 900 37 08</a>
-                <a href="#" class="header__button">Написать нам</a>
-            </div>
-            <nav class="header__menu">
-                <a href="#" class="header__link">СТОИМОСТЬ</a>
-                <a href="#" class="header__link">О НАС</a>
-                <a href="#" class="header__link">АКЦИИ</a>
-                <a href="#" class="header__link">БЛОГ</a>
-            </nav>
-        </header>
+        <div class="fixed-header">
+            <header class="header">
+                <div class="header__logo">
+                    <a href="#">Norma<span>Cleaning</span></a>
+                </div>
+                <div class="header__contacts">
+                    <a href="#" class="header__phone">+7 (812) 900 37 08</a>
+                    <a href="#" class="header__button">Написать нам</a>
+                </div>
+                <nav class="header__menu">
+                    <a href="#" class="header__link">СТОИМОСТЬ</a>
+                    <a href="#" class="header__link">О НАС</a>
+                    <a href="#" class="header__link">АКЦИИ</a>
+                    <a href="#" class="header__link">БЛОГ</a>
+                </nav>
+            </header>
+        </div>
         <div class="preview-slider">
             <div class="preview-slider__about">
                 <p class="preview-slider__caption">
@@ -40,35 +89,43 @@
                 <a href="#" class="preview-slider__button">РАССЧИТАТЬ СТОИМОСТЬ</a>
             </div>
 
-            <div class="preview-slider__carousel">
-                <div class="preview-slider__first-slide">
-                    <div>
-                        <p>Генеральная уборка</p>
-                        <p>
-                            Если давно не делали уборку или была вечеринка
-                        </p>
-                        <p>
-                            от 1 200 ₽
-                        </p>
+            <div class="preview-slider__carousel swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide preview-slider__first-slide">
+                        <div>
+                            <p>Генеральная уборка</p>
+                            <p>
+                                Если давно не делали уборку или была вечеринка
+                            </p>
+                            <p>
+                                от 1 200 ₽
+                            </p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide preview-slider__second-slide-control">
+                        <div class="preview-slider__second-slide">
+                            <img src="img/chair.png" alt="chair">
+                            <p>Химчистка</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide preview-slider__second-slide-control">
+                        <div class="preview-slider__second-slide">
+                            <img src="img/chair.png" alt="chair">
+                            <p>Хумчистка</p>
+                        </div>
                     </div>
                 </div>
-                <div class="preview-slider__second-slide-control">
-                    <div class="preview-slider__second-slide">
-                        <img src="img/chair.png" alt="chair">
-                        <p>Химчистка</p>
+                <div class="preview-slider__control-carousel">
+                    <div class="preview-slider__arrows">
+                        <i class="preview-slider__arrow_left"></i>
+                        <i class="preview-slider__arrow_right"></i>
                     </div>
-                    <div class="preview-slider__control-carousel">
-                        <div class="preview-slider__arrows">
-                            <i class="preview-slider__arrow_left"></i>
-                            <i class="preview-slider__arrow_right"></i>
-                        </div>
-                        <div class="preview-slider__circles">
-                            <div class="preview-slider__circle preview-slider__circle_active"></div>
-                            <div class="preview-slider__circle"></div>
-                            <div class="preview-slider__circle"></div>
-                            <div class="preview-slider__circle"></div>
-                            <div class="preview-slider__circle"></div>
-                        </div>
+                    <div class="preview-slider__circles">
+                        <div class="preview-slider__circle preview-slider__circle_active"></div>
+                        <div class="preview-slider__circle"></div>
+                        <div class="preview-slider__circle"></div>
+                        <div class="preview-slider__circle"></div>
+                        <div class="preview-slider__circle"></div>
                     </div>
                 </div>
             </div>
@@ -78,29 +135,28 @@
                 <h3>НАША МИССИЯ</h3>
                 <div>
                     <h2>Чистота и уют вашего дома</h2>
-                    <p>Основная миссия нашей компании — сервис для тех, кто хочет жить в чистоте и не тратить время на
-                        уборку</p>
+                    <p>Основная миссия нашей компании — сервис для тех, кто хочет жить в чистоте и не тратить время на уборку</p>
                 </div>
             </div>
             <div class="advantage">
                 <div class="advantage__item advantage__item_1">
-                    <img src="./img/adv1.png" alt="adv1">
+                    <img src="./img/woman.png" alt="adv1">
                     <h5>Опытные сотрудники</h5>
                     <p>Высокая организованность и профессиональный персонал</p>
                 </div>
                 <div class="advantage__item advantage__item_2">
-                    <img src="img/adv2.png" alt="adv2">
+                    <img src="img/heart.png" alt="adv2">
                     <h5>Безопасные средства</h5>
                     <p>Средства имеют сертификат
-                        European Ecolabel</p>
+                    European Ecolabel</p>
                 </div>
                 <div class="advantage__item advantage__item_3">
-                    <img src="img/adv3.png" alt="adv3">
+                    <img src="img/cert.png" alt="adv3">
                     <h5>Гарантия качества</h5>
                     <p>Исправим недочёты, если не понравится результат</p>
                 </div>
                 <div class="advantage__item advantage__item_4">
-                    <img src="img/adv4.png" alt="adv4">
+                    <img src="img/price.png" alt="adv4">
                     <h5>Доступная цена</h5>
                     <p>У нас доступные цены на профессиональный клининг</p>
                 </div>
@@ -116,10 +172,10 @@
                     <h2>Скидка 10% на первый заказ</h2>
                 </div>
                 <form class="calculator__calculate">
-                    <div class="calculator__radio">
+                    <div class="calculator__radio calculator__radio-place">
                         <input id="home" type="radio" name="radio" value="1" checked>
                         <label for="home">Дом</label>
-
+                    
                         <input id="business" type="radio" name="radio" value="2">
                         <label for="business">Бизнес</label>
                     </div>
@@ -127,54 +183,54 @@
                     <div class="calculator__main-form">
                         <div class="calculator__form-element square">
                             <p>Общая площадь, м²</p>
-                            <input type="text" name="square" placeholder="0">
+                            <input type="text" name="square" placeholder="0" value="32">
                         </div>
                         <div class="calculator__form-element bath">
                             <p>Санузлов</p>
-                            <input type="text" name="bath_count" placeholder="1">
+                            <input type="text" name="bath_count" placeholder="1" value="1">
                         </div>
                         <div class="calculator__form-element calculator__form-element_choice">
                             <p>Стремянка или пылесос</p>
                             <div class="calculator__radio calculator__radio_choice">
-                                <input id="need" type="radio" name="radio-2" value="1" checked>
+                                <input id="need" type="radio" name="radio-2" value="200" checked>
                                 <label for="need">Нужно</label>
-
-                                <input id="noneed" type="radio" name="radio-2" value="2">
+                            
+                                <input id="noneed" type="radio" name="radio-2" value="0">
                                 <label for="noneed" class="noneed">Не нужно</label>
                             </div>
                         </div>
-                        <div class="calculator__form-element check_row">
+                        <div class="calculator__form-element calculator__form-element-type check_row">
                             <p>Вид уборки &#128712;</p>
-                            <input id="view-1" type="radio" name="radio-3" value="1" checked>
+                            <input id="view-1" type="radio" name="radio-3" value="0.7" checked>
                             <label for="view-1">Поддерживающая</label>
-                            <input id="view-2" type="radio" name="radio-3" value="2">
+                            <input id="view-2" type="radio" name="radio-3" value="1">
                             <label for="view-2">Генеральная</label>
-                            <input id="view-3" type="radio" name="radio-3" value="3">
+                            <input id="view-3" type="radio" name="radio-3" value="1.2">
                             <label for="view-3">После ремонта</label>
                         </div>
-                        <div class="calculator__form-element check_row check_row_1">
+                        <div class="calculator__form-element check_row check_row_1">                            
                             <p>Дополнительные услуги</p>
                             <div>
-                                <input id="add_serv_1" type="checkbox" name="add_service">
-                                <label for="add_serv_1">Химчистка мягкой
-                                    мебели</label>
-                                <input id="add_serv_2" type="checkbox" name="add_service">
-                                <label for="add_serv_2">Химчистка мягкой
-                                    мебели</label>
-                                <input id="add_serv_3" type="checkbox" name="add_service">
-                                <label for="add_serv_3">Химчистка мягкой
-                                    мебели</label>
+                            <input id="add_serv_1" type="checkbox" name="add_service" value="300">
+                            <label for="add_serv_1">Химчистка мягкой
+                            мебели</label>
+                            <input id="add_serv_2" type="checkbox" name="add_service" value="300" checked>
+                            <label for="add_serv_2">Химчистка мягкой
+                                мебели</label>
+                            <input id="add_serv_3" type="checkbox" name="add_service" value="300">
+                            <label for="add_serv_3">Химчистка мягкой
+                                мебели</label>
                             </div>
                             <div>
-                                <input id="add_serv_4" type="checkbox" name="add_service">
-                                <label for="add_serv_4">Химчистка мягкой
-                                    мебели</label>
-                                <input id="add_serv_5" type="checkbox" name="add_service">
-                                <label for="add_serv_5">Химчистка мягкой
-                                    мебели</label>
-                                <input id="add_serv_6" type="checkbox" name="add_service">
-                                <label for="add_serv_6">Химчистка мягкой
-                                    мебели</label>
+                            <input id="add_serv_4" type="checkbox" name="add_service" value="300" checked>
+                            <label for="add_serv_4">Химчистка мягкой
+                                мебели</label>
+                            <input id="add_serv_5" type="checkbox" name="add_service" value="300">
+                            <label for="add_serv_5">Химчистка мягкой
+                                мебели</label>
+                            <input id="add_serv_6" type="checkbox" name="add_service" value="300">
+                            <label for="add_serv_6">Химчистка мягкой
+                                мебели</label>
                             </div>
                         </div>
 
@@ -196,7 +252,7 @@
                         <div class="calculator__form-element button">
                             <a href="#" class="form-button">ЗАКАЗАТЬ ЗВОНОК</a>
                             <p class="accept">Нажимая «Заказать звонок», я даю согласие
-                                на <a href="#">обработку персональных данных</a></p>
+                            на <a href="#">обработку персональных данных</a></p>
                         </div>
                     </div>
                 </form>
@@ -206,19 +262,15 @@
             <div class="about-us__header block-header">
                 <h3>О КОМПАНИИ</h3>
                 <h2>NormaCleaning —
-                    чистота с заботой</h2>
+                чистота с заботой</h2>
             </div>
             <div class="about-us__description">
-                <p>Наша компания более 7 лет оказывает профессиональные клининговые услуги жителям Санкт-Петербурга и
-                    Ленинградской
-                    области. Уборка квартир, офисов и других помещений после ремонта – направление, в котором наши
-                    сотрудники получили
-                    большой опыт.</p>
-                <p>Для компании NormaCleaning очень важна её репутация. Наши сотрудники отвечают за свои слова,
-                    выполняют все требования и
-                    соблюдают заданные сроки. Мы внимательно читаем отзывы, обращаем внимание на просьбы клиентов и
-                    откликаемся на ваши
-                    предложения.</p>
+                <p>Наша компания более 7 лет оказывает профессиональные клининговые услуги жителям Санкт-Петербурга и Ленинградской
+                области. Уборка квартир, офисов и других помещений после ремонта – направление, в котором наши сотрудники получили
+                большой опыт.</p>
+                <p>Для компании NormaCleaning очень важна её репутация. Наши сотрудники отвечают за свои слова, выполняют все требования и
+                соблюдают заданные сроки. Мы внимательно читаем отзывы, обращаем внимание на просьбы клиентов и откликаемся на ваши
+                предложения.</p>
             </div>
             <div class="about-us__images">
                 <div class="about-us__images_first">
@@ -230,22 +282,38 @@
                 </div>
             </div>
         </section>
-        <section class="stock-swiper">
-            <div class="stock-swiper__header block-header">
-                <h3>НЕ ПРОПУСТИ</h3>
-                <h2>Акции и скидки</h2>
-            </div>
-            <div class="stock-swiper__swiper">
-                <div class="stock-swiper__item stock-swiper__item_1">
-                    <h4></h4>
-                    <p></p>
+    </div>
+    <div style="overflow: hidden;">
+        <div class="wrapper">
+            <section class="stock-swiper swiper">
+                <div class="stock-swiper__header block-header">
+                    <h3>НЕ ПРОПУСТИ</h3>
+                    <h2>Акции и скидки</h2>
                 </div>
-                <div class="stock-swiper__item stock-swiper__item_2">
-                    <h4></h4>
-                    <p></p>
+                <div class="stock-swiper__swiper swiper-wrapper">
+                    <div class="swiper-slide stock-swiper__item stock-swiper__item_1">
+                        <div class="stock-swiper__item-img">
+                            <img src="img/stock-1.png" alt="">
+                        </div>
+                        <div class="stock-swiper__item-block">
+                            <h4>Скидка 10% на первый заказ</h4>
+                            <p>Акция для новых пользователей</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide stock-swiper__item stock-swiper__item_1">
+                        <div class="stock-swiper__item-img">
+                            <img src="img/stock-2.png" alt="">
+                        </div>
+                        <div class="stock-swiper__item-block">
+                            <h4>Акция для новоселов</h4>
+                            <p>Поможем переехать в чистый дом</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
+    </div>
+    <div class="wrapper">
         <section class="blog">
             <div class="blog__header block-header">
                 <h3>НАШ БЛОГ</h3>
@@ -257,8 +325,8 @@
                         <div>
                             <span class="datetime">01/06&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;3 мин</span>
                             <h3>Какие этапы работ включает
-                                услуга генеральная уборка
-                                квартир</h3>
+                            услуга генеральная уборка
+                            квартир</h3>
                         </div>
                     </a>
                 </div>
@@ -289,13 +357,61 @@
                     </a>
                 </div>
             </div>
+            <div class="blog__items-mobile swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="#" class="blog__item_small blog__item_small_1">
+                            <span class="blog__items-mobile-img">
+                                <img src="img/blog-small-1.png" alt="">
+                            </span>
+                            <div class="blog__items-mobile-block">
+                                <span class="datetime">27/10&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5 мин</span>
+                                <h4>Советы хозяйке по чистке мягкой мебели</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="blog__item_small blog__item_small_1">
+                            <span class="blog__items-mobile-img">
+                                <img src="img/blog-small-2.png" alt="">
+                            </span>
+                            <div class="blog__items-mobile-block">
+                                <span class="datetime">27/10&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5 мин</span>
+                                <h4>Советы хозяйке по чистке мягкой мебели</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="blog__item_small blog__item_small_1">
+                            <span class="blog__items-mobile-img">
+                                <img src="img/blog-small-3.png" alt="">
+                            </span>
+                            <div class="blog__items-mobile-block">
+                                <span class="datetime">27/10&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5 мин</span>
+                                <h4>Советы хозяйке по чистке мягкой мебели</h4>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="#" class="blog__item_small blog__item_small_1">
+                            <span class="blog__items-mobile-img">
+                                <img src="img/blog-small-4.png" alt="">
+                            </span>
+                            <div class="blog__items-mobile-block">
+                                <span class="datetime">27/10&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;5 мин</span>
+                                <h4>Советы хозяйке по чистке мягкой мебели</h4>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="review">
             <div class="review__header block-header">
                 <h3>ОТЗЫВЫ О НАС</h3>
                 <div class="review__more">
                     <h2>Лучшие клиенты —
-                        наши клиенты!</h2>
+                    наши клиенты!</h2>
                     <a href="#" class="review__more_button">БОЛЬШЕ ОТЗЫВОВ
                         <div class="review__more_button_circle"></div>
                         <div class="review__more_button_arrow"></div>
@@ -310,11 +426,9 @@
                             <div class="review__item_star"></div>
                             <span class="review__item_place">Тамбур</span>
                         </div>
-                        <p class="review__item_content">Обращались в компанию за уборкой после ремонта общего коридора
-                            на этаже. Загрязнения были сильными (шпатлевка, пыль,
-                            фуга и даже краска на пористой плитке), но ребята (Андрей и напарник) со своим оборудованием
-                            и средствами справились на
-                            отлично!
+                        <p class="review__item_content">Обращались в компанию за уборкой после ремонта общего коридора на этаже. Загрязнения были сильными (шпатлевка, пыль,
+                        фуга и даже краска на пористой плитке), но ребята (Андрей и напарник) со своим оборудованием и средствами справились на
+                        отлично!
                         </p>
                         <a href="" class="review__item_full-review">Читать полностью</a>
                     </div>
@@ -328,17 +442,47 @@
                             <div class="review__item_star"></div>
                             <span class="review__item_place">Мытье окон</span>
                         </div>
-                        <p class="review__item_content">Теперь планируем обращаться сюда на постоянной основе. Провели
-                            нам мытье
+                        <p class="review__item_content">Теперь планируем обращаться сюда на постоянной основе. Провели нам мытье
                             наших окон, всего было 62 шт ( промышленное
-                            здание), за работу взялись не смотря на некоторые сложности с удобством, результат устроил
-                            полностью.
+                            здание), за работу взялись не смотря на некоторые сложности с удобством, результат устроил полностью.
                         </p>
                         <a href="" class="review__item_full-review">Читать полностью</a>
                     </div>
                 </div>
                 <div class="review__items_column">
                     <div class="review__item_pic-big"></div>
+                </div>
+            </div>
+            <div class="review__items-mobile swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="review__item review__item_text">
+                            <div class="review__item_title">
+                                <h5 class="review__item_name">Бревнов</h5>
+                                <div class="review__item_star"></div>
+                                <span class="review__item_place">Тамбур</span>
+                            </div>
+                            <p class="review__item_content">Обращались в компанию за уборкой после ремонта общего коридора на этаже. Загрязнения были сильными (шпатлевка, пыль,
+                            фуга и даже краска на пористой плитке), но ребята (Андрей и напарник) со своим оборудованием и средствами справились на
+                            отлично!
+                            </p>
+                            <a href="" class="review__item_full-review">Читать полностью</a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="review__item review__item_text">
+                            <div class="review__item_title">
+                                <h5 class="review__item_name">Ларченко</h5>
+                                <div class="review__item_star"></div>
+                                <span class="review__item_place">Мытье окон</span>
+                            </div>
+                            <p class="review__item_content">Теперь планируем обращаться сюда на постоянной основе. Провели нам мытье
+                                наших окон, всего было 62 шт ( промышленное
+                                здание), за работу взялись не смотря на некоторые сложности с удобством, результат устроил полностью.
+                            </p>
+                            <a href="" class="review__item_full-review">Читать полностью</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -350,8 +494,8 @@
             <div class="footer__column footer__column_1">
                 <div class="footer__logo">Norma<span>Cleaning</span></div>
                 <div class="footer__copy">ООО «Профессиональные клининговые услуги» | УНП 192165712
-                    ИП Стригалёв Максим Викторович | УНП 191716120<br>
-                    © 2021 Все права защищены</div>
+                ИП Стригалёв Максим Викторович | УНП 191716120<br>
+                © 2021 Все права защищены</div>
             </div>
             <div class="footer__column footer__column_2">
                 <div class="footer__menu">
@@ -362,9 +506,9 @@
                 </div>
                 <div class="footer__docs">
                     <a href="#">Политика
-                        конфиденциальности</a>
+                    конфиденциальности</a>
                     <a href="#">Обработка
-                        данных</a>
+                    данных</a>
                 </div>
             </div>
             <div class="footer__column footer__column_3">
@@ -378,8 +522,20 @@
                     </div>
                 </div>
             </div>
+            <div class="footer__column footer__column-mobile">
+                <div class="footer__docs">
+                    <a href="#">Политика
+                    конфиденциальности</a>
+                    <a href="#">Обработка
+                    данных</a>
+                </div>
+                <div class="footer__copy">ООО «Профессиональные клининговые услуги» | УНП 192165712
+                ИП Стригалёв Максим Викторович | УНП 191716120<br>
+                © 2021 Все права защищены</div>
+            </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
